@@ -1,3 +1,4 @@
 $(".flash").html("<div class='alert alert-success'><%= flash[:success] %></div>");
 $(".items").append("<%= j render @item %>");
 $("#new_item").find('#item_name').val('');
+$("#item_picture").replaceWith($("#item_picture").val('').clone(true));
