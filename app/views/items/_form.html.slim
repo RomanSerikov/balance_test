@@ -1,11 +1,16 @@
-= form_for item, remote: true do |form|
-  .form-group
-    = form.label :name
-    = form.text_field :name, class: "form-control"
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-body
+        = form_for item, remote: true do |form|
 
-  .form-group
-    = form.label :picture
-    = form.file_field :picture, class: "form-control"
+          .col-md-4.form-group
+            = form.label :name
+            = form.text_field :name, class: "form-control"
 
-  .actions
-    = form.submit 'Save', class: "btn btn-primary"
+          .col-md-4.form-group
+            = form.label :picture
+            = form.file_field :picture, class: "form-control"
+
+          .col-md-4.actions.form-btn
+            = form.submit 'Save', class: "btn btn-primary"

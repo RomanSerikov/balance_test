@@ -1,10 +1,12 @@
-h1 Items
-h2 New Item
+.row
+  .col-md-8
+    h1 Items
+    h2 New Item
 
-= render "form", item: @item
+    = render "form", item: @item
 
-h2 Items list
-hr
+    h2 Items list
+    hr
 
-.items
-  = render @items
+    .items
+      = render @items
