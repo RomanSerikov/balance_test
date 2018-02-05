@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:update, :destroy]
+
   def index
     @item = Item.new
     @items = Item.all
@@ -10,13 +12,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
     flash.now[:notice] = "Item was successfully updated."
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.delete
     flash.now[:notice] = "Item was successfully updated."
   end
@@ -25,5 +25,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :picture, :remove_picture)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
