@@ -8,17 +8,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    flash.now[:notice] = "Item was successfully updated."
+    flash[:success] = "Item was successfully created."
   end
 
   def update
     @item.update(item_params)
-    flash.now[:notice] = "Item was successfully updated."
+    flash[:success] = "Item was successfully updated."
   end
 
   def destroy
     @item.delete
-    flash.now[:notice] = "Item was successfully updated."
+    flash[:success] = "Item was successfully removed."
   end
 
   private

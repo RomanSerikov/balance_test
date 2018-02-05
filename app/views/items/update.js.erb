@@ -1,2 +1,2 @@
-$(".flash").html("<%= flash[:notice] %>");
+$(".flash").html("<div class='alert alert-success'><%= flash[:success] %></div>");
 $("#item-" + "<%= @item.id %>").html("<%= j render @item %>");
